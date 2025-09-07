@@ -1,0 +1,13 @@
+src/main/java/com/example/userservice/
+│
+├── controller/
+│   ├── auth/
+│   │   ├── AuthController.java
+│   │   └── RefreshTokenController.java   (optional, if using refresh tokens)
+│   │
+│   ├── user/
+│   │   ├── UserController.java           (for /users/me, profile updates)
+│   │   └── AdminUserController.java      (admin endpoints: list users, assign roles)
+│   │
+│   └── advice/
+│       └── GlobalExceptionHandler.java   (handles validation & API errors globally)
