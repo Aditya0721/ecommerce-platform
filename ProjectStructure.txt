@@ -1,0 +1,40 @@
+                       ┌─────────────────────┐
+                       │      Frontend       │
+                       │ React + Redux/RTK   │
+                       │ (Next.js optional)  │
+                       └─────────▲───────────┘
+                                 │
+                                 ▼
+                     ┌─────────────────────────┐
+                     │   API Gateway / BFF     │
+                     │ (Spring Cloud Gateway)  │
+                     └─────────▲───────────────┘
+                               │
+    ┌─────────────────────────────────────────────────────────────┐
+    │                      Microservices Layer                    │
+    │                                                             │
+    │  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐        │
+    │  │ User Service│   │ Product Svc │   │ Cart Svc    │        │
+    │  │ (SpringBoot │   │ (SpringBoot │   │ (Express.js │        │
+    │  │  + MySQL)   │   │  + MongoDB) │   │  + Redis)   │        │
+    │  └─────────────┘   └─────────────┘   └─────────────┘        │
+    │                                                             │
+    │  ┌─────────────┐   ┌──────────────┐   ┌───────────────┐     │
+    │  │ Order Svc   │   │ Payment Svc  │   │ Inventory Svc │     │
+    │  │ (SpringBoot │   │ (Express.js  │   │ (SpringBoot   │     │
+    │  │  + MySQL)   │   │  + Stripe API│   │  + MongoDB)   │     │
+    │  └─────────────┘   └──────────────┘   └───────────────┘     │
+    └─────────────────────────────────────────────────────────────┘
+                               │
+                               ▼
+                   ┌───────────────────────────┐
+                   │   Messaging / Async Bus   │
+                   │   (RabbitMQ / Kafka)      │
+                   └───────────────────────────┘
+                               │
+                               ▼
+                   ┌───────────────────────────┐
+                   │   Observability & Infra   │
+                   │   (ELK, Prometheus, Grafana│
+                   │   + AKS Deployment)        │
+                   └───────────────────────────┘
