@@ -27,7 +27,7 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "Invalid input"),
             @ApiResponse(responseCode = "409", description = "User already exists")
     })
-    @PostMapping(path = "register",
+    @PostMapping(path = "/register",
     consumes = MediaType.APPLICATION_JSON_VALUE,
     produces = MediaType.APPLICATION_JSON_VALUE
     )
@@ -35,5 +35,8 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.CREATED).body(new UserResponse("TestUser", "Test12@test.com", "Strong@123"));
     }
 
-
+    @PostMapping(path = "/ping")
+    public ResponseEntity<String> ping(){
+        return ResponseEntity.status(HttpStatus.CREATED).body("Hi, working");
+    }
 }

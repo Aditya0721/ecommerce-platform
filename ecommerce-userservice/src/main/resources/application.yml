@@ -1,3 +1,6 @@
+server:
+  servlet:
+    context-path: /user-service/api
 spring:
   application:
     name: ecommerce-userservice
@@ -11,7 +14,10 @@ spring:
       ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.SQLServerDialect
-  server:
-    servlet:
-      context:
-        path: /user-service/api/
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG         # security debug (matchers, filters)
+    org.springframework.boot.autoconfigure: DEBUG  # auto-config report
+
+
